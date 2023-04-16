@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="MAINvb" alignment="TOP_CENTER" blendMode="DIFFERENCE" prefHeight="730.0" prefWidth="1125.0" style="-fx-background-color: #8C5886;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="statsapp_22.functionsWin_Cont">
+   <children>
+      <BorderPane>
+         <center>
+            <VBox alignment="CENTER">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1117.0" style="-fx-background-color: #E8E8E8;">
+                     <children>
+                        <Label fx:id="ansLbl" alignment="CENTER" layoutX="312.0" layoutY="194.0" prefHeight="186.0" prefWidth="476.0" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="0.7440758293838863" startX="1.0" startY="0.09478672985781988">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.05779999867081642" green="0.19755619764328003" blue="0.3400000035762787" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7236841917037964" green="0.13066519796848297" blue="0.6347313523292542" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <HBox layoutX="334.0" layoutY="547.0" spacing="2.0" style="-fx-background-color: #A6BAA6; -fx-background-radius: 12;" AnchorPane.bottomAnchor="4.0">
+                           <children>
+                              <Button fx:id="computeBtn" blendMode="COLOR_BURN" onMouseClicked="#formattingWindowWith_ComputeBtnClicked" style="-fx-background-radius: 12; -fx-cursor: hand;" text="Compute">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="showSteps" blendMode="MULTIPLY" mnemonicParsing="false" onAction="#showWork" text="Show working" textFill="#0c2886">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="clearBtn" blendMode="COLOR_BURN" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-radius: 12;" text="Clear fields">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="0.40758293838862564" startX="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.05779999867081642" green="0.19755619764328003" blue="0.3400000035762787" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9599999785423279" green="0.06719999760389328" blue="0.20324571430683136" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </HBox>
+                        <Label fx:id="valCounter" alignment="CENTER" layoutX="304.0" layoutY="73.0" minHeight="16" minWidth="0.0" prefHeight="27.0" prefWidth="102.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="mainScreen" blendMode="MULTIPLY" editable="false" layoutX="302.0" layoutY="108.0" opacity="0.89" prefHeight="511.0" prefWidth="765.0" promptText="SCREEN" style="-fx-background-color: green;" visible="false" wrapText="true">
+                           <font>
+                              <Font name="Century Gothic Bold" size="21.0" />
+                           </font>
+                        </TextArea>
+                        <VBox fx:id="inputsVB" alignment="CENTER" layoutX="5.0" layoutY="120.0" prefHeight="100.0" prefWidth="232.0" spacing="33.0">
+                           <children>
+                              <HBox fx:id="inputTextFieldsHB" prefHeight="36.0" prefWidth="179.0" spacing="2.0">
+                                 <children>
+                                    <TextField fx:id="inputTF" blendMode="EXCLUSION" opacity="0.71" prefHeight="38.0" prefWidth="157.0" promptText="Input data">
+                                       <font>
+                                          <Font name="Noto Sans" size="17.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="OTHER_VALUES_TF" alignment="CENTER" maxWidth="56.0" opacity="0.68" prefHeight="38.0" prefWidth="115.0" promptText="Weight" visible="false">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                 <children>
+                                    <Button fx:id="acceptBtn" mnemonicParsing="false" onAction="#acceptInput" prefHeight="29.0" prefWidth="74.0" text="Accept">
+                                       <font>
+                                          <Font name="Cambria Bold" size="17.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Button>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Line fx:id="resetLine" blendMode="DIFFERENCE" endX="-60.0" startX="-100.0" stroke="#e12828" strokeLineCap="ROUND" strokeWidth="4.0" visible="false" />
+                                          <Button fx:id="resetBtn" mnemonicParsing="false" onAction="#resetData" prefHeight="25.0" prefWidth="53.0" text="Reset" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Text layoutX="344.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GROUP TWO PRESENTS STATSapp22">
+                           <font>
+                              <Font name="Arial Black" size="29.0" />
+                           </font>
+                        </Text>
+                        <VBox layoutX="756.0" layoutY="441.0" visible="false">
+                           <children>
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Mean" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Weighted mean" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Median" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Mode" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="746.0" layoutY="174.0" visible="false">
+                           <children>
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Upper quartile" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Inter-quartile range" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Lower quartile" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Percentile" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Mean deviation" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Second quartile" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Standard deviation" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Range" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Variance" />
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="87.0" fitWidth="92.0" layoutX="904.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/software-development-images-png.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="68.0" fitWidth="100.0" layoutX="823.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../files/fact-png.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="cur_fx" alignment="CENTER" layoutX="464.0" layoutY="64.0" minHeight="16" minWidth="0.0" prefHeight="39.0" prefWidth="481.0" text="WELCOME">
+                           <font>
+                              <Font name="System Bold Italic" size="25.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="0.7440758293838863" startX="1.0" startY="0.09478672985781988">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.05779999867081642" green="0.19755619764328003" blue="0.3400000035762787" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.11339999735355377" green="0.6299999952316284" blue="0.14292000234127045" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="TIME_LBLE" alignment="CENTER" blendMode="EXCLUSION" layoutX="996.0" layoutY="17.0" prefHeight="17.0" prefWidth="99.0" style="-fx-background-color: #bf7e7e; -fx-background-radius: 5; -fx-border-color: lightyellow; -fx-border-width: 2; -fx-border-radius: 8;" text="date" textFill="#1b0912" />
+                        <Line fx:id="clearLine" blendMode="DIFFERENCE" endX="-60.0" layoutX="653.0" layoutY="690.0" opacity="0.75" startX="-100.0" stroke="#dacde4" strokeLineCap="ROUND" strokeWidth="4.0" visible="false" />
+                        <Line fx:id="showWorkLine" blendMode="DIFFERENCE" endX="-60.0" layoutX="554.0" layoutY="690.0" opacity="0.75" startX="-100.0" stroke="#dacde4" strokeLineCap="ROUND" strokeWidth="4.0" visible="false" />
+                        <Line fx:id="compLine" blendMode="DIFFERENCE" endX="-60.0" layoutX="460.0" layoutY="690.0" opacity="0.75" startX="-100.0" stroke="#dacde4" strokeLineCap="ROUND" strokeWidth="4.0" visible="false" />
+                        <HBox fx:id="OTHER_INPUT_CONTROLS_HB" alignment="BASELINE_LEFT" layoutX="16.0" layoutY="275.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="38.0" prefWidth="215.0" spacing="12.0" visible="false">
+                           <children>
+                              <Button fx:id="OTHER_VALUES_BTN" mnemonicParsing="false" onAction="#percentileValueSelector" text="other &gt;">
+                                 <padding>
+                                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <StackPane fx:id="disp_And_Cent_StckP" layoutX="51.0" layoutY="66.0" prefHeight="35.0" prefWidth="197.0">
+                           <children>
+                              <SplitMenuButton fx:id="dispersion_SM" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" text="Dispersion" visible="false">
+                                <items>
+                                  <MenuItem fx:id="mean_dev_mi" mnemonicParsing="false" onAction="#meanDevMeth" text="Mean deviation" />
+                                  <MenuItem fx:id="std_dev_mi" mnemonicParsing="false" onAction="#stdDevMeth" text="Standard deviation" />
+                                    <MenuItem fx:id="variance_mi" mnemonicParsing="false" onAction="#varianceMeth" text="Variance" />
+                                    <MenuItem fx:id="percentile_mi" mnemonicParsing="false" onAction="#percentileMeth" text="Percentile" />
+                                    <MenuItem fx:id="range_mi" mnemonicParsing="false" onAction="#rangeMeth" text="Range" />
+                                    <MenuItem fx:id="LQ_mi" mnemonicParsing="false" onAction="#lowerQuartileMeth" text="Lower quartile" />
+                                    <MenuItem fx:id="mid_Q_mi" mnemonicParsing="false" onAction="#midQuartileMeth" text="Mid-quartile" />
+                                    <MenuItem fx:id="UQ_mi" mnemonicParsing="false" onAction="#upperQuartileMeth" text="Upper quartile" />
+                                    <MenuItem fx:id="inter_Q_mi" mnemonicParsing="false" onAction="#interQuartileMeth" text="Inter-quartile range" />
+                                    <MenuItem fx:id="coefficientOfVar_mi" mnemonicParsing="false" onAction="#coefficientOfVarMeth" text="Coefficient of variance" />
+                                </items>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </SplitMenuButton>
+                              <SplitMenuButton fx:id="centralTend_SM" mnemonicParsing="false" text="Central tendency">
+                                <items>
+                                  <MenuItem fx:id="meanMI" mnemonicParsing="false" onAction="#meanFinder" text="Mean" />
+                                  <MenuItem fx:id="medianMI" mnemonicParsing="false" onAction="#medianMeth" text="Median" />
+                                    <MenuItem fx:id="weighted_meanMI" mnemonicParsing="false" onAction="#weightedMeth" text="Weighted mean" />
+                                    <MenuItem fx:id="modeMI" mnemonicParsing="false" onAction="#modeMeth" text="Mode" />
+                                </items>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </SplitMenuButton>
+                           </children>
+                        </StackPane>
+                        <ImageView fx:id="hamburgerImgV" accessibleRole="BUTTON" fitHeight="21.0" fitWidth="31.0" layoutX="18.0" layoutY="69.0" onMouseClicked="#changeGroup" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                           <image>
+                              <Image url="@../files/menuBlack.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="ansTxt" layoutX="10.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="278.13671875">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="0.1943127962085308" startX="1.0" startY="0.943127962085308">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.05779999867081642" green="0.19755619764328003" blue="0.3400000035762787" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.7236841917037964" green="0.13066519796848297" blue="0.6347313523292542" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="901.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="soskode@tek.eid">
+                           <stroke>
+                              <RadialGradient centerX="0.5220994475138121" centerY="0.466824644549763" focusDistance="0.02298850574712641" radius="0.6264367816091954">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.1631944477558136" green="0.75" blue="0.4468171298503876" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </stroke>
+                           <fill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.9367816091954023">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.11184210330247879" green="0.5163376927375793" blue="0.8947368264198303" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </fill>
+                        </Text>
+                        <Label fx:id="previewScreen" alignment="TOP_LEFT" layoutX="210.0" layoutY="175.0" prefHeight="449.0" prefWidth="77.0">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <HBox alignment="TOP_CENTER" spacing="2.0" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="967.0">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem fx:id="closeMI" mnemonicParsing="false" onAction="#closingApp" text="Close" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                           <items>
+                              <MenuItem fx:id="saveFile" mnemonicParsing="false" onAction="#saveCurrentWork" text="save file" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Developers">
+                          <items>
+                            <MenuItem fx:id="membersMI" mnemonicParsing="false" onAction="#showMembers" text="Show members" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  <Button fx:id="changeLookModeBtn" mnemonicParsing="false" onAction="#changeWindowLooks" text="Light Mode" />
+                  <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#loggingOut" prefHeight="25.0" prefWidth="65.0" style="-fx-cursor: hand;" text="Logout">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <Pane prefHeight="700.0" prefWidth="0.0" style="-fx-background-color: #8C5886;" BorderPane.alignment="CENTER" />
+         </left>
+         <bottom>
+            <Pane prefHeight="7.0" prefWidth="1125.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>
